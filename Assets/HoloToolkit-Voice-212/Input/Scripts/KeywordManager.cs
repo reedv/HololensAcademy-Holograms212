@@ -41,14 +41,15 @@ namespace Academy.HoloToolkit.Unity
         private KeywordRecognizer keywordRecognizer;
         private Dictionary<string, UnityEvent> responses;
 
+        /// <summary>
+        /// Convert the array of KeywordAndResponse structs into a dictionary for easy access
+        /// Use this dict. to init. a KeywordRecognizer and attach an OnPhraseRecognized event handler
+        /// to fire when the recognizer identifies a keyword.
+        /// Also, start KeywordRecognizer if the start behavior is set to AutoStart
+        /// </summary>
         void Start()
         {
-            /// <summary>
-            /// Convert the array of KeywordAndResponse structs into a dictionary for easy access
-            /// Use this dict. to init. a KeywordRecognizer and attach an OnPhraseRecognized event handler
-            /// to fire when the recognizer identifies a keyword.
-            /// Also, start KeywordRecognizer if the start behavior is set to AutoStart
-            /// </summary>
+            
             if (KeywordsAndResponses.Length > 0)
             {
                 // Convert the struct array into a dictionary, with the keywords as the keys and the methods as the values.
